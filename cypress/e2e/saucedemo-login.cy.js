@@ -2,7 +2,7 @@
 /// <reference types="cypress" />
 
 describe("test login page for saucedemo website", () => {
-  it.only("should vist the saucedemo website and log in", () => {
+  it("should vist the saucedemo website and log in", () => {
     //go to saucedemo webpage and check that url is correct
     cy.visit("https://www.saucedemo.com/");
     cy.url().should("include", "saucedemo");

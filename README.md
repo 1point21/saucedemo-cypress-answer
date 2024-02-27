@@ -14,7 +14,7 @@ Clone this repo and open in IDE of choice. Open terminal and `cd` into correct d
 
 Cypress is listed as a dev dependency in the package.json. In correct root directory for this project, run `npm i` to install all relevant dependencies for the project.
 
-Then run the command `npm run cypress:open` to open Cypress. Choose **E2E Testing** and then **Chrome Web Browser**. 
+Then run the command `npm run cypress:open` to open Cypress. Choose **E2E Testing** and then **Chrome Web Browser**. Click **Start E2E Testing in Chrome** 
 
 _NOTE: the option `chromeWebSecurity` is set to `false` in the `cypress.config.js` config file_
 
@@ -33,6 +33,8 @@ The following tests are run:
 **Check that website is not directly accessible via url** - The script will attmempt to navigate to the website bypassing the login page.
 
 _NOTE: to avoid a 404-error, the `failOnStatusCode` option is set to `false`_
+
+To run one test at a time, add `.only` after chosen `it`-block.
 
 ## Further development
 
