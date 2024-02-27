@@ -2,7 +2,7 @@
 /// <reference types="cypress" />
 
 describe("test login page for saucedemo website", () => {
-  it("should vist the saucedemo website and log in", () => {
+  it.only("should vist the saucedemo website and log in", () => {
     //go to saucedemo webpage and check that url is correct
     cy.visit("https://www.saucedemo.com/");
     cy.url().should("include", "saucedemo");
@@ -15,9 +15,11 @@ describe("test login page for saucedemo website", () => {
     cy.get('[data-test="password"]').type("secret_sauce");
     cy.get('[data-test="password"]').should("have.value", "secret_sauce");
 
-    // click on "login" button and check url
+    // click on "login" button and check url/visibility of one item
     cy.get("[id=login-button]").click();
     cy.url().should("include", "/inventory");
+    cy.get('.inventory_item_name').should('include.text', 'Backpack')
+
   });
 
   it("should display correct error message if USERNAME incorrect", () => {
